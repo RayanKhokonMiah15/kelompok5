@@ -4,113 +4,247 @@
     <title>Login</title>
     <style>
         body {
-            background: #f2f2f2;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(120deg, #22223b 0%, #4a4e69 100%);
             min-height: 100vh;
-            position: relative;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+            box-shadow: 0 8px 32px 0 rgba(42, 50, 80, 0.18);
+            border-radius: 28px;
             overflow: hidden;
+            margin: 32px auto;
+            max-width: 1100px;
+            background: rgba(255,255,255,0.92);
         }
-        .bg-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            min-width: 100vw;
-            min-height: 100vh;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            object-fit: cover;
-        }
-        .card {
-            background: #fff;
-            max-width: 350px;
-            margin: 60px auto;
-            padding: 30px 25px 25px 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        .left-panel {
+            background: linear-gradient(135deg, #22223b 80%, #4a4e69 100%);
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            z-index: 1;
+            padding: 0 30px;
         }
-        .card h2 {
-            margin-top: 0;
-            margin-bottom: 20px;
+        .left-panel h1 {
+            font-size: 2.5rem;
+            color: #f2e9e4;
+            font-weight: 800;
             text-align: center;
+            margin-bottom: 30px;
+            margin-top: 0;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #22223b44;
         }
-        .form-group {
-            margin-bottom: 16px;
+        .divider {
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, #c9ada7 0%, #22223b 100%);
+            margin: 0 auto 30px auto;
+            border-radius: 2px;
         }
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 8px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 15px;
-        }
-        .btn-login {
-            width: 100%;
-            padding: 10px 0;
-            background: #007bff;
-            color: #fff;
+        .logo-circle {
+            width: 160px;
+            height: 160px;
+            background: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f2e9e4;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 auto 40px auto;
+            box-shadow: none;
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
+            letter-spacing: 1px;
+            overflow:hidden;
+            padding:0;
         }
-        .btn-login:hover {
-            background: #0056b3;
+        .logo-circle img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            object-position:center;
+            border-radius:50%;
+            border:none;
+        }
+        .socials {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+        .socials p {
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            color: #c9ada7;
+            font-size: 1.1rem;
+        }
+        .socials .btn-social {
+            background: #c9ada7;
+            color: #22223b;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+            margin-right: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 5px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px 0 #c9ada744;
+        }
+        .socials .btn-social:hover {
+            background: #9a8c98;
+            color: #f2e9e4;
+        }
+        .right-panel {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.98);
+        }
+        .login-form {
+            width: 100%;
+            max-width: 420px;
+            padding: 48px 32px 40px 32px;
+            background: #f2e9e4;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px 0 #4a4e6922;
+            border: 1.5px solid #c9ada7;
+        }
+        .login-form label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4a4e69;
+            margin-bottom: 8px;
+            display: block;
+            letter-spacing: 0.5px;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #c9ada7;
+            border-radius: 14px;
+            background: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            outline: none;
+            color: #22223b;
+            transition: border 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px 0 #c9ada722;
+        }
+        .login-form input:focus {
+            border: 1.5px solid #4a4e69;
+            background: #f2e9e4;
+            box-shadow: 0 2px 12px 0 #4a4e6922;
+        }
+        .login-form input::placeholder {
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+        .login-form .btn-login {
+            width: 100%;
+            padding: 16px 0;
+            background: linear-gradient(90deg, #4a4e69 60%, #22223b 100%);
+            color: #f2e9e4;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 12px 0 #4a4e6922;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .login-form .btn-login:hover {
+            background: linear-gradient(90deg, #22223b 60%, #4a4e69 100%);
+            color: #c9ada7;
+            box-shadow: 0 4px 16px 0 #4a4e6922;
+        }
+        .login-form .forgot {
+            display: block;
+            text-align: center;
+            color: #4a4e69;
+            text-decoration: none;
+            font-size: 1.05rem;
+            margin-top: 8px;
+            transition: color 0.2s;
+            font-weight: 600;
+        }
+        .login-form .forgot:hover {
+            color: #9a8c98;
         }
         .error-message {
-            color: #d8000c;
-            background: #ffd2d2;
-            border: 1px solid #d8000c;
-            border-radius: 4px;
-            padding: 8px;
-            margin-bottom: 15px;
-            text-align: center;
+            color:#d8000c;
+            background:#ffd2d2;
+            border:1px solid #d8000c;
+            border-radius:8px;
+            padding:10px;
+            margin-bottom:18px;
+            text-align:center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                box-shadow: none;
+                border-radius: 0;
+                margin: 0;
+            }
+            .left-panel, .right-panel {
+                width: 100%;
+                min-height: 300px;
+            }
+            .left-panel {
+                padding-bottom: 120px;
+            }
+            .login-form {
+                border-radius: 0 0 24px 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <video class="bg-video" autoplay muted loop>
-        <source src="{{ asset('video/background.mp4') }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="card">
-        <h2>Login</h2>
-        {{-- Tambahkan pesan error jika ada --}}
-        @if(session('error'))
-            <div class="error-message">
-                {{ session('error') }}
+    <div class="container">
+        <div class="left-panel">
+            <h1>Welcome to our<br>website</h1>
+            <div class="divider"></div>
+            <div class="logo-circle" style="overflow:hidden; padding:0; border:none;">
+                <img src="/img/logo.png" alt="Logo SMEA" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:50%;border:none;" />
             </div>
-        @endif
-        <form method="POST" action="{{ route('login.proses') }}">
-            @csrf
-            <div class="form-group">
-                <label for="nama">Nama:</label>
-                <input type="text" id="nama" name="nama" required>
+            <div class="socials">
+                <p>Follow us</p>
+                <button class="btn-social">IG</button>
+                <button class="btn-social">FB</button>
+                <button class="btn-social">X</button>
             </div>
-            <div class="form-group">
-                <label for="nisn">NISN:</label>
-                <input type="text" id="nisn" name="nisn" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn-login">Login</button>
-        </form>
-    </div>
-    <div style="text-align:center; color:#fff; margin-top:20px; text-shadow:0 1px 3px #000;">
-        &copy; {{ date('Y') }} Tugas PAA Sep
+        </div>
+        <div class="right-panel">
+            <form class="login-form" method="POST" action="{{ route('login.proses') }}">
+                @csrf
+                @if(session('error'))
+                    <div class="error-message" style="color:#d8000c;background:#ffd2d2;border:1px solid #d8000c;border-radius:4px;padding:8px;margin-bottom:15px;text-align:center;">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                <label for="nisn">NISN</label>
+                <input type="text" id="nisn" name="nisn" placeholder="Masukan NISN anda" value="1234567890" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" value="passwordanda" required>
+                <button type="submit" class="btn-login">Masuk</button>
+                <a href="#" class="forgot">Forgot password?</a>
+                @if(session('nama_siswa'))
+                    <div style="margin-top:20px;text-align:center;font-weight:700;color:#4a4e69;">Selamat datang, {{ session('nama_siswa') }}</div>
+                @endif
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -189,7 +189,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <div class="nama-siswa">nama siswa</div>
+            <div class="nama-siswa"></div>
             <img src="https://www.intipesan.com/wp-content/uploads/2018/07/IMG-20180703-WA0004.jpg" alt="Foto Profil" class="profile-img">
             <div class="divider"></div>
             <button class="sidebar-btn">Halaman Utama Absen</button>
