@@ -1,195 +1,197 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Login Siswa</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(120deg, #22223b 0%, #4a4e69 100%);
+            background: #f6f7fb;
             min-height: 100vh;
+            overflow: hidden;
         }
         .container {
             display: flex;
             min-height: 100vh;
-            box-shadow: 0 8px 32px 0 rgba(42, 50, 80, 0.18);
-            border-radius: 28px;
+            height: 100vh;
+            box-shadow: 0 4px 24px 0 rgba(42, 50, 80, 0.08);
+            border-radius: 18px;
             overflow: hidden;
-            margin: 32px auto;
-            max-width: 1100px;
-            background: rgba(255,255,255,0.92);
+            margin: 0 auto;
+            max-width: 900px;
+            background: #fff;
         }
         .left-panel {
-            background: linear-gradient(135deg, #22223b 80%, #4a4e69 100%);
-            width: 40%;
+            background: #232946;
+            width: 38%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 0 30px;
+            padding: 0 24px;
         }
         .left-panel h1 {
-            font-size: 2.5rem;
-            color: #f2e9e4;
-            font-weight: 800;
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 700;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 18px;
             margin-top: 0;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 8px #22223b44;
+            letter-spacing: 0.5px;
+            text-shadow: none;
         }
         .divider {
-            width: 80%;
+            width: 60%;
             height: 2px;
-            background: linear-gradient(90deg, #c9ada7 0%, #22223b 100%);
-            margin: 0 auto 30px auto;
+            background: #eebbc3;
+            margin: 0 auto 18px auto;
             border-radius: 2px;
         }
         .logo-circle {
-            width: 160px;
-            height: 160px;
+            width: 110px;
+            height: 110px;
+            /* background: #fff; */
             background: none;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #f2e9e4;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 28px auto;
             box-shadow: none;
             border: none;
-            letter-spacing: 1px;
-            overflow:hidden;
-            padding:0;
+            overflow: hidden;
+            padding: 0;
         }
         .logo-circle img {
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            object-position:center;
-            border-radius:50%;
-            border:none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: none;
         }
         .socials {
             position: absolute;
-            bottom: 30px;
-            left: 30px;
+            bottom: 24px;
+            left: 24px;
         }
         .socials p {
-            margin: 0 0 10px 0;
-            font-weight: 700;
-            color: #c9ada7;
-            font-size: 1.1rem;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+            color: #eebbc3;
+            font-size: 1rem;
         }
         .socials .btn-social {
-            background: #c9ada7;
-            color: #22223b;
+            background: none;
+            color: #eebbc3;
             border: none;
-            border-radius: 8px;
-            padding: 8px 18px;
-            margin-right: 8px;
-            font-size: 1rem;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
-            margin-bottom: 5px;
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px 0 #c9ada744;
+            margin-right: 6px;
+            margin-bottom: 0;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .socials .btn-social:hover {
-            background: #9a8c98;
-            color: #f2e9e4;
+            background: #eebbc3;
+            color: #232946;
         }
         .right-panel {
-            width: 60%;
+            width: 62%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255,255,255,0.98);
+            background: #fff;
         }
         .login-form {
             width: 100%;
-            max-width: 420px;
-            padding: 48px 32px 40px 32px;
-            background: #f2e9e4;
-            border-radius: 24px;
-            box-shadow: 0 4px 24px 0 #4a4e6922;
-            border: 1.5px solid #c9ada7;
+            max-width: 340px;
+            padding: 36px 24px 28px 24px;
+            background: #f6f7fb;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px 0 #23294611;
+            border: none;
         }
         .login-form label {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #4a4e69;
-            margin-bottom: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #232946;
+            margin-bottom: 6px;
             display: block;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.2px;
         }
         .login-form input {
             width: 100%;
-            padding: 14px 18px;
-            border: 1.5px solid #c9ada7;
-            border-radius: 14px;
+            padding: 12px 14px;
+            border: 1px solid #eebbc3;
+            border-radius: 10px;
             background: #fff;
-            font-size: 1.1rem;
-            margin-bottom: 24px;
+            font-size: 1rem;
+            margin-bottom: 18px;
             outline: none;
-            color: #22223b;
+            color: #232946;
             transition: border 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px 0 #c9ada722;
+            box-shadow: 0 1px 4px 0 #eebbc322;
         }
         .login-form input:focus {
-            border: 1.5px solid #4a4e69;
-            background: #f2e9e4;
-            box-shadow: 0 2px 12px 0 #4a4e6922;
+            border: 1.5px solid #232946;
+            background: #f6f7fb;
+            box-shadow: 0 2px 8px 0 #23294622;
         }
         .login-form input::placeholder {
             color: #b0b0b0;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         .login-form .btn-login {
             width: 100%;
-            padding: 16px 0;
-            background: linear-gradient(90deg, #4a4e69 60%, #22223b 100%);
-            color: #f2e9e4;
+            padding: 13px 0;
+            background: #232946;
+            color: #fff;
             border: none;
-            border-radius: 14px;
-            font-size: 1.2rem;
-            font-weight: 800;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 12px 0 #4a4e6922;
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 6px 0 #23294611;
+            transition: background 0.2s, color 0.2s;
         }
         .login-form .btn-login:hover {
-            background: linear-gradient(90deg, #22223b 60%, #4a4e69 100%);
-            color: #c9ada7;
-            box-shadow: 0 4px 16px 0 #4a4e6922;
+            background: #eebbc3;
+            color: #232946;
         }
         .login-form .forgot {
             display: block;
             text-align: center;
-            color: #4a4e69;
+            color: #232946;
             text-decoration: none;
-            font-size: 1.05rem;
-            margin-top: 8px;
+            font-size: 0.98rem;
+            margin-top: 6px;
             transition: color 0.2s;
-            font-weight: 600;
+            font-weight: 500;
         }
         .login-form .forgot:hover {
-            color: #9a8c98;
+            color: #eebbc3;
         }
         .error-message {
-            color:#d8000c;
-            background:#ffd2d2;
-            border:1px solid #d8000c;
-            border-radius:8px;
-            padding:10px;
-            margin-bottom:18px;
-            text-align:center;
+            color: #d8000c;
+            background: #ffeaea;
+            border: 1px solid #d8000c;
+            border-radius: 8px;
+            padding: 8px;
+            margin-bottom: 14px;
+            text-align: center;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         @media (max-width: 900px) {
             .container {
@@ -200,13 +202,13 @@
             }
             .left-panel, .right-panel {
                 width: 100%;
-                min-height: 300px;
+                min-height: 220px;
             }
             .left-panel {
-                padding-bottom: 120px;
+                padding-bottom: 60px;
             }
             .login-form {
-                border-radius: 0 0 24px 24px;
+                border-radius: 0 0 16px 16px;
             }
         }
     </style>
@@ -221,9 +223,9 @@
             </div>
             <div class="socials">
                 <p>Follow us</p>
-                <button class="btn-social">IG</button>
-                <button class="btn-social">FB</button>
-                <button class="btn-social">X</button>
+                <button class="btn-social" title="Instagram">&#xf16d;</button>
+                <button class="btn-social" title="Facebook">&#xf09a;</button>
+                <button class="btn-social" title="X">&#xf099;</button>
             </div>
         </div>
         <div class="right-panel">
