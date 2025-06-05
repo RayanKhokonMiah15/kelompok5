@@ -53,6 +53,13 @@
             border-top: 2px solid #a5b4fc;
             margin: 12px 0 28px 0;
         }
+        .sidebar-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 16px;
+        }
         .sidebar-btn {
             background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
             color: #fff;
@@ -60,7 +67,6 @@
             border-radius: 14px;
             padding: 14px 32px;
             font-size: 16px;
-            margin-bottom: 18px;
             cursor: pointer;
             width: 75%;
             text-align: center;
@@ -189,12 +195,14 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <div class="nama-siswa"></div>
+            <div class="nama-siswa">{{ auth()->user()->name }}</div>
             <img src="https://www.intipesan.com/wp-content/uploads/2018/07/IMG-20180703-WA0004.jpg" alt="Foto Profil" class="profile-img">
             <div class="divider"></div>
-            <button class="sidebar-btn">Halaman Utama Absen</button>
-            <button class="sidebar-btn" style="margin-top: 40px;"></button>
-            <button class="sidebar-btn"></button>
+            <div class="sidebar-buttons">
+                <button class="sidebar-btn">Halaman Utama Absen</button>
+                <button class="sidebar-btn">Daftar Absen</button>
+                <button class="sidebar-btn">Jadwal Pelajaran</button>
+            </div>
         </div>
         <div class="main-content">
             <form class="absen-box">

@@ -120,6 +120,7 @@
             border-radius: 16px;
             box-shadow: 0 2px 12px 0 #23294611;
             border: none;
+            box-sizing: border-box;
         }
         .login-form label {
             font-size: 1rem;
@@ -130,7 +131,7 @@
             letter-spacing: 0.2px;
         }
         .login-form input {
-            width: 100%;
+            width: calc(100% - 28px);
             padding: 12px 14px;
             border: 1px solid #eebbc3;
             border-radius: 10px;
@@ -141,6 +142,7 @@
             color: #232946;
             transition: border 0.2s, box-shadow 0.2s;
             box-shadow: 0 1px 4px 0 #eebbc322;
+            box-sizing: border-box;
         }
         .login-form input:focus {
             border: 1.5px solid #232946;
@@ -237,9 +239,9 @@
                     </div>
                 @endif
                 <label for="nisn">NISN</label>
-                <input type="text" id="nisn" name="nisn" placeholder="Masukan NISN anda" value="1234567890" required>
+                <input type="text" id="nisn" name="nisn" placeholder="Masukkan NISN anda" required>
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Masukkan password" value="passwordanda" required>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
                 <button type="submit" class="btn-login">Masuk</button>
                 <a href="#" class="forgot">Forgot password?</a>
                 @if(session('nama_siswa'))
